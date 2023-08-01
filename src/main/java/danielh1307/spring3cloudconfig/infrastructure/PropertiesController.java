@@ -13,14 +13,11 @@ public class PropertiesController {
     private ConfigMapProperties configMapProperties;
 
     @Autowired
-    private ApplicationProperties applicationProperties;
-
-    @Autowired
     private ConfigMapEnvProperties configMapEnvProperties;
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello I'm newer 7";
+        return "Hello I'm here";
     }
 
     @GetMapping("/config-map")
@@ -31,11 +28,6 @@ public class PropertiesController {
     @GetMapping("/config-map-env")
     public String getConfigMapEnvProperty() {
         return configMapEnvProperties.getMy_first_name();
-    }
-
-    @GetMapping("/application")
-    public String getApplicationProperty() {
-        return applicationProperties.getMessage();
     }
 
 }

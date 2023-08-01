@@ -13,9 +13,9 @@ spec:
       envFrom:
         - configMapRef:
             name: names-configmap
-      volumeMounts:
-        - name: first-volume
-          mountPath: /etc/config/first
+      env:
+        - name: SPRING_CLOUD_BOOTSTRAP_ENABLED
+          value: "true"
  volumes:
    - name: first-volume
      configMap:

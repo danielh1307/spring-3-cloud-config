@@ -14,13 +14,7 @@ spring:
   cloud:
     kubernetes:
       config:
-        name: names-configmap
-        namespace: spring-3-cloud-config
         fail-fast: true
-        paths:
-          - /etc/config/first/my-app.properties
       reload:
         enabled: true
         strategy: refresh
-
-bean.message: "Hello Hugo"
