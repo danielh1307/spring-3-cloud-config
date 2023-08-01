@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spring-3-cloud-config
+  labels:
+    name: spring-3-cloud-config
+spec:
+  containers:
+    - name: spring-3-cloud-config
+      image: localhost:5000/spring-3-cloud-config:1.8
+      ports:
+        - containerPort: 8080
+      envFrom:
+        - configMapRef:
+            name: names-configmap

@@ -1,0 +1,26 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: env,health,refresh,restart,info
+  endpoint:
+    restart:
+      enabled: true
+    refresh:
+      enabled: true
+spring:
+  application:
+    name: my-app
+  cloud:
+    kubernetes:
+      config:
+        name: names-configmap
+        namespace: spring-3-cloud-config
+        fail-fast: true
+        paths:
+          - /etc/config/first/my-app.properties
+      reload:
+        enabled: true
+        strategy: refresh
+
+bean.message: "Hello Hugo"
