@@ -29,3 +29,7 @@ in den Pod eingebunden ist. Als file gemounted ging es nicht, auch nicht als 2. 
 =========
 
 This version works with the Secret, but it is injected as env variable into the Pod.
+
+=========
+
+Here the update of the secret works (although the endpoint /refresh must be called).

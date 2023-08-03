@@ -1,21 +1,21 @@
 package danielh1307.spring3cloudconfig.infrastructure;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+@Data
 @Configuration
-@RefreshScope
+@ConfigurationProperties(prefix = "aad")
 public class SecretProperties {
 
-    @Value("#{environment.skey}")
-    private String skey;
+    private String password;
 
-    public String getSkey() {
-        return skey;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSkey(String skey) {
-        this.skey = skey;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

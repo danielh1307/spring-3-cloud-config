@@ -43,7 +43,7 @@ public class PropertiesController {
 
     @GetMapping("/secret")
     public String getSecretProperty() {
-        return secretProperties.getSkey();
+        return secretProperties.getPassword();
     }
 
 }

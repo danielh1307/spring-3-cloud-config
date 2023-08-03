@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    kubernetes:
+      enabled: true
+      config:
+        fail-fast: true
+      reload:
+        enabled: true
+        monitoring-secrets: true
+        monitoring-config-maps: true
+        strategy: refresh
+        mode: event
+      secrets:
+        enabled: true
+        paths: /opt/application/secrets

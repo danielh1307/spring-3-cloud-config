@@ -18,9 +18,12 @@ spec:
       env:
         - name: SPRING_CLOUD_BOOTSTRAP_ENABLED
           value: "true"
-        - name: SKEY
-          valueFrom:
-            secretKeyRef:
-              name: my-local-secret
-              key: skey
+      volumeMounts:
+        - name: the-gunslinger-secret
+          mountPath: "/opt/application/secrets"
+          readOnly: true
+ volumes:
+   - name: the-gunslinger-secret
+     secret:
+       secretName: the-gunslinger-secret
 
