@@ -23,7 +23,7 @@ public class PropertiesController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello I'm here 4";
+        return "Hello I'm here";
     }
 
     @GetMapping("/config-map")
