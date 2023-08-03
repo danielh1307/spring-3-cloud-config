@@ -33,3 +33,8 @@ This version works with the Secret, but it is injected as env variable into the 
 =========
 
 Here the update of the secret works (although the endpoint /refresh must be called).
+
+=========
+
+Exactly with this configuration, both configmap and secret is updated.
+Configmap (names-configmap) is updated even at-once without calling the actuator!

@@ -11,5 +11,7 @@ management:
 spring:
   application:
     name: my-app
+  config:
+    import=kubernetes:
 
 debug: true

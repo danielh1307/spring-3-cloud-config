@@ -1,21 +1,19 @@
 package danielh1307.spring3cloudconfig.infrastructure;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@RefreshScope
+@ConfigurationProperties(prefix = "ccd")
 public class ConfigMapEnvProperties {
 
-    @Value("${first_name}")
-    private String my_first_name;
+    private String firstName;
 
-    public void setMy_first_name(String my_first_name) {
-        this.my_first_name = my_first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getMy_first_name() {
-        return my_first_name;
+    public String getFirstName() {
+        return firstName;
     }
 }

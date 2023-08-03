@@ -33,7 +33,7 @@ public class PropertiesController {
 
     @GetMapping("/config-map-env")
     public String getConfigMapEnvProperty() {
-        return configMapEnvProperties.getMy_first_name();
+        return configMapEnvProperties.getFirstName();
     }
 
     @GetMapping("/config-map-file")

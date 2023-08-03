@@ -12,8 +12,6 @@ spec:
         - containerPort: 8080
       envFrom:
         - configMapRef:
-            name: names-configmap
-        - configMapRef:
             name: file-config-my-app
       env:
         - name: SPRING_CLOUD_BOOTSTRAP_ENABLED
@@ -22,8 +20,13 @@ spec:
         - name: the-gunslinger-secret
           mountPath: "/opt/application/secrets"
           readOnly: true
+        - name: names-configmap
+          mountPath: "/opt/application/configs"
  volumes:
    - name: the-gunslinger-secret
      secret:
        secretName: the-gunslinger-secret
+   - name: names-configmap
+     configMap:
+       name: names-configmap
 

@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: names-configmap
 data:
-  name: igel
-  first_name: ingo
+  ccd.name: igel
+  ccd.firstName: ingo

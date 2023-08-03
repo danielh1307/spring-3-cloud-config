@@ -3,7 +3,10 @@ spring:
     kubernetes:
       enabled: true
       config:
+        enabled: true
+        name: names-configmap
         fail-fast: true
+        enableApi: true
       reload:
         enabled: true
         monitoring-secrets: true
