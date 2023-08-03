@@ -36,6 +36,11 @@ public class PropertiesController {
         return configMapEnvProperties.getFirstName();
     }
 
+    /**
+     *
+     * Here the update does not work. Probably because the config map was injected as env variable.
+     *
+     */
     @GetMapping("/config-map-file")
     public String getConfigMapFileProperty() {
         return configMapFileProperties.getFmessage();

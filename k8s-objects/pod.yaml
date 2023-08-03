@@ -5,11 +5,28 @@ metadata:
   labels:
     name: spring-3-cloud-config
 spec:
-  containers:
+ containers:
     - name: spring-3-cloud-config
-      image: localhost:5000/spring-3-cloud-config:1.8
+      image: localhost:5000/spring-3-cloud-config:latest
       ports:
         - containerPort: 8080
       envFrom:
         - configMapRef:
-            name: names-configmap
+            name: file-config-my-app
+      env:
+        - name: SPRING_CLOUD_BOOTSTRAP_ENABLED
+          value: "true"
+      volumeMounts:
+        - name: the-gunslinger-secret
+          mountPath: "/opt/application/secrets"
+          readOnly: true
+        - name: names-configmap
+          mountPath: "/opt/application/configs"
+ volumes:
+   - name: the-gunslinger-secret
+     secret:
+       secretName: the-gunslinger-secret
+   - name: names-configmap
+     configMap:
+       name: names-configmap
+
