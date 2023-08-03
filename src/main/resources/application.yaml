@@ -13,5 +13,3 @@ spring:
     name: my-app
   config:
     import=kubernetes:
-
-debug: true

@@ -5,7 +5,6 @@ spring:
       config:
         enabled: true
         fail-fast: true
-        enableApi: true
         sources:
         - name: names-configmap
         - name: my-app
