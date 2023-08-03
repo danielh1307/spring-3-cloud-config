@@ -16,9 +16,4 @@ spec:
       env:
         - name: SPRING_CLOUD_BOOTSTRAP_ENABLED
           value: "true"
- volumes:
-   - name: first-volume
-     configMap:
-       name: my-app
-
 
