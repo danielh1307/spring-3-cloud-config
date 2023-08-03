@@ -18,3 +18,11 @@ Die Updates funktionieren allerdings nicht.
 
 =====
 
+Das file-configmap.yaml kann er auch lesen, aber nur wenn es via:
+```
+      envFrom:
+        - configMapRef:
+            name: file-config-my-app
+```
+in den Pod eingebunden ist. Als file gemounted ging es nicht, auch nicht als 2. application.properties.
+

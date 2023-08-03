@@ -13,6 +13,8 @@ spec:
       envFrom:
         - configMapRef:
             name: names-configmap
+        - configMapRef:
+            name: file-config-my-app
       env:
         - name: SPRING_CLOUD_BOOTSTRAP_ENABLED
           value: "true"

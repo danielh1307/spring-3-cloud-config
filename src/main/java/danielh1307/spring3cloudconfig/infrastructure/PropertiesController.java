@@ -15,9 +15,12 @@ public class PropertiesController {
     @Autowired
     private ConfigMapEnvProperties configMapEnvProperties;
 
+    @Autowired
+    private ConfigMapFileProperties configMapFileProperties;
+
     @GetMapping("/hello")
     public String hello() {
-        return "Hello I'm here";
+        return "Hello I'm here 3";
     }
 
     @GetMapping("/config-map")
@@ -28,6 +31,11 @@ public class PropertiesController {
     @GetMapping("/config-map-env")
     public String getConfigMapEnvProperty() {
         return configMapEnvProperties.getMy_first_name();
+    }
+
+    @GetMapping("/config-map-file")
+    public String getConfigMapFileProperty() {
+        return configMapFileProperties.getFmessage();
     }
 
 }
