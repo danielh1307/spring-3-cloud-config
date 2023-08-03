@@ -10,8 +10,6 @@ spring:
         - name: my-app
       reload:
         enabled: true
-        monitoring-secrets: true
-        monitoring-config-maps: true
         strategy: refresh
         mode: event
       secrets:
