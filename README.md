@@ -26,3 +26,6 @@ Das file-configmap.yaml kann er auch lesen, aber nur wenn es via:
 ```
 in den Pod eingebunden ist. Als file gemounted ging es nicht, auch nicht als 2. application.properties.
 
+=========
+
+This version works with the Secret, but it is injected as env variable into the Pod.

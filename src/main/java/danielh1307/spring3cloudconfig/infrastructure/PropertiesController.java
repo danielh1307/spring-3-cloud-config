@@ -18,9 +18,12 @@ public class PropertiesController {
     @Autowired
     private ConfigMapFileProperties configMapFileProperties;
 
+    @Autowired
+    private SecretProperties secretProperties;
+
     @GetMapping("/hello")
     public String hello() {
-        return "Hello I'm here 3";
+        return "Hello I'm here 4";
     }
 
     @GetMapping("/config-map")
@@ -36,6 +39,11 @@ public class PropertiesController {
     @GetMapping("/config-map-file")
     public String getConfigMapFileProperty() {
         return configMapFileProperties.getFmessage();
+    }
+
+    @GetMapping("/secret")
+    public String getSecretProperty() {
+        return secretProperties.getSkey();
     }
 
 }

@@ -17,7 +17,14 @@ spring:
         fail-fast: true
       reload:
         enabled: true
+        monitoring-secrets: true
+        monitoring-config-maps: true
         strategy: refresh
         mode: event
+      secrets:
+        enabled: true
+        name: my-local-secret
+        namespace: spring-3-cloud-config
+
 
 debug: true

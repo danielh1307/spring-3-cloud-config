@@ -18,4 +18,9 @@ spec:
       env:
         - name: SPRING_CLOUD_BOOTSTRAP_ENABLED
           value: "true"
+        - name: SKEY
+          valueFrom:
+            secretKeyRef:
+              name: my-local-secret
+              key: skey
 
